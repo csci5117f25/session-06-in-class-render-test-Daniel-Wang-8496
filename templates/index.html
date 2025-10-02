@@ -9,6 +9,17 @@
     <title>Hi!</title>
 </head>
 <body> 
+    {% if session %}
+        <h1>SESSION EXISTS</h1>
+        <code>
+            <pre>
+                {{session | tojson}}
+            </pre>
+        </code>
+    {% else %}
+        <h1>NO SESSION</h1>
+    {% endif %}
+
     <h1>Guest List</h1>
     <form action="/guestlist" method="POST">
         <label for="Name">Name:</label><br>
